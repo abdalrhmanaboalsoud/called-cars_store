@@ -13,5 +13,8 @@
     {% else %}
        <p>This car is available for purchase.</p>
     {% endif %}
+    <hr>
+    <button class="btn btn-delete"> <a href="{% url 'car_update' pk=car.pk %}">Update</a></button>
+    <button class="btn btn-cancel"><a href="{% url 'car_delete' pk=car.pk %}">Delete</a></button>
 </div>
 {% endblock %}

@@ -17,4 +17,4 @@ class Car(models.Model):
         return f"{self.brand} {self.model} has bought by {self.buyer_id} for {self.price}$"
 
     def get_absolute_url(self):
-        return reverse("cars_app:car_details", kwargs={"pk": self.pk})
+        return reverse("car_details", kwargs={"pk": self.pk})

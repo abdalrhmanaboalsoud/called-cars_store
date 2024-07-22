@@ -2,4 +2,10 @@
 
 {% block content %}
     <h1>Welcome to the library</h1>
+    <form method="post"> 
+        {% csrf_token %}
+        <p>Are you sure you want to delete "{{ car.brand }} {{car.model}}"?</p>
+        <input type="submit" value="Confirm">
+       <button><a href="{% url 'car_details' pk=car.pk %}">Cancel</a></button>
+    </form>
 {% endblock %}
