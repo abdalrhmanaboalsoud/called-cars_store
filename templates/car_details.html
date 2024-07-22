@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <h2>
+        {{ car.brand }} {{ car.model }}
+    </h2>
+    <p>Price: {{ car.price }}$</p>
+    <p>Is bought: {{ car.is_bought }}</p>
+    {% if car.is_bought %}
+       <p>Buy time: {{ car.buy_time }}</p>
+       <p>This car has been bought by: {{ car.buyer_id }}</p>
+    {% else %}
+       <p>This car is available for purchase.</p>
+    {% endif %}
+</div>
+{% endblock %}

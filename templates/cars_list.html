@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<button><a href="{% url 'car_create' %}">Add Car</a></button>
+{% for car in cars_objs %}
+    <div class="card">
+        <h2>
+            {{ car.brand }} {{ car.model }}
+        </h2>
+        <p>Price: {{ car.price }}$</p>
+        <hr>
+        <button><a href="{% url 'car_details' pk=car.pk %}">Details</a></button>
+    </div>
+{% endfor %}
+{% endblock %}
